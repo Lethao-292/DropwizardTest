@@ -12,6 +12,7 @@ public class Application extends io.dropwizard.core.Application<DBConfiguration>
 
   @Override
   public void run(DBConfiguration configuration, Environment environment) throws Exception {
+    LOGGER.info("This is my new log");
     LOGGER.info("Registering REST resources");
     final JdbiFactory factory = new JdbiFactory();
     final Jdbi jdbi = factory.build(environment, configuration.getDatasourceFactory(), "postgresql");
